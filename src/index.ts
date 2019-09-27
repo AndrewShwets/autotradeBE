@@ -1,3 +1,7 @@
+// Alias for absolute imports
+// tslint:disable-next-line:no-var-requires
+require("module-alias/register");
+
 import dotenv from "dotenv";
 import express from "express";
 
@@ -8,7 +12,7 @@ const app = express();
 
 // define a route handler for the default home page
 app.get("/", (req, res) => {
-  res.json({ express: "Hello world!!" });
+  res.json({ express: "Hello world", time: new Date() });
 });
 
 // start the Express server
